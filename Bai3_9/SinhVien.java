@@ -41,6 +41,6 @@ public abstract class SinhVien {
 	//Phuong thuc lay thong tin loai sinh vien
     public abstract String loatAnPham();
 // phương thức kiểm tra loại ấn phẩm có xuất bản cách đây 10 năm không
-//phương thức in ấn phẩm ra màn mình console
+//phương thức in sinh vien ra màn mình console
     public abstract void inAp();
 }
