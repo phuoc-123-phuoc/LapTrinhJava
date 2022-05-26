@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 public class GiaoDien {
 	static JFrame f = new JFrame("SINH VIEN");
 	
-//Phương thức hiển thị danh mục ấn phẩm với giao diện đồ họa thông 
+//Phương thức hiển thị Sinh Vien với giao diện đồ họa thườngthường 
 	public static  void HienThi(Khoa a) {
 		
 
