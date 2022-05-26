@@ -2,167 +2,182 @@ package Bai3_9;
 import java.util.LinkedList;
 import java.util.Scanner;
 public class Khoa {
-    private  LinkedList<SinhVienChinhQuy> SVCQ = new LinkedList<>();
+    private static  LinkedList<SinhVienChinhQuy> SVCQ = new LinkedList<>();
     private LinkedList<SinhVienTaiChuc> SVTC = new LinkedList<>();
-// phương thức lấy danh sách sách tham khảo
+// phương thức lấy danh sách sinh vien chinh quy
     public LinkedList<SinhVienChinhQuy> getListSinhVienChinhQuy(){
         return SVCQ;
     }
-// phương thức lấy danh sách tap chí
+// phương thức lấy danh sach sinh vien tai chuc
     public LinkedList<SinhVienTaiChuc> getListSinhVienTaiChuc(){
         return SVTC;
     }
-// phương thức thêm sách tham khảo vào danh sách
+// phương thức thêm sách them sinh vien chinhs quy vao danh sach
     public void addItemSinhVienChinhQuy(SinhVienChinhQuy e){
         SVCQ.add(e);
     }
-// phương thức thêm tạp chí vào danh sách
+// phương thức thêm sinh vien tai chuc vao danh sach
     public void addItemSinhVienTaiChuc(SinhVienTaiChuc e){
         SVTC.add(e);
     }
-// phương thức xuất danh sách sách tham khảo ra màn hình console
+// phương thức xuất danh sách sach sinh vien chinh quy ra màn hình console
     public void XuatDSSinhVienChinhQuy(){
         for(SinhVienChinhQuy tk: SVCQ){
             tk.inAp();
         }
     }
 
-// phương thức xuất danh sách tạp chí ra màn hình console
+// phương thức xuất danh sách sinh vien tai chuc ra màn hình console
     public void XuatDSSinhVienTaiChuc(){
         for(SinhVienTaiChuc tc: SVTC){
             tc.inAp();
         }
     }
-    
-// // phương thức so sánh hai loại ấn phẩm có cùng loại hay không
-//     public static boolean SoSanhHaiAnPham(AnPham a, AnPham b)
-//     {
-//         if(a.getTacGia().compareToIgnoreCase(b.getTacGia())==0 && a.loatAnPham().compareToIgnoreCase(b.loatAnPham())==0 )
-//         {
-//             return true;
-//         }
-//         return false;
-//     }
-// // phương thức tính tổng tiền các loại ấn phẩm 
-//     public  double TongTienAnPham(){
-//         double kq=0;
-//         for(SachThamKhao tk: sachTk){
-//             kq+=tk.getGiaTien();
-//         }
-//         for(TapChi tc: tapC){
-//             kq+=tc.getGiaTien();
-//         }
-//         return kq;
-//     }
-// // phương thức tìm sách tham khảo có chương sách nhiều trang nhất
-//     public void TimSachThamKhaoNhieuChuongNhat(){
-//         int max=0;
-//         for(SachThamKhao tk: sachTk){
-//             if(tk.getSoTrangCuaChuong()>max)
-//             max=tk.getSoTrangCuaChuong();
-//         }
-//     }
-// // tìm tạp chí theo tên
-//     public boolean TimTapChi(String ten)
-//     {
-//         for(TapChi tc: tapC){
-//             if(tc.getTenTapChi().compareToIgnoreCase(ten)==0)
-//             return true;
-//         }
-//         return false;
-//     }
-// // In danh sách các tạp chí xuất bản cách đây 1 năm
-//     public void DanhSachTapChiXuatBanCachDay1Nam(){
-//             for(TapChi tc: tapC){
-//                 if(tc.soNamXbChoDenNay()==1)
-//                 {
-//                     tc.inAp();
-//                 }
-//             }
-//     }
-// // Sắp xếp danh mục ấn phẩm giảm dần theo năm xuất bản
-//     public void sapXepGiamDanTheoNamXb(){
-//         int n=sachTk.size();
-//        for(int i=0; i<n-1;i++)
-//         for(int j=i+1; j<n;j++){
-//             if(sachTk.get(i).getNamXB()<sachTk.get(j).getNamXB())
-//             {
-//                 SachThamKhao t=sachTk.get(i);
-//                 sachTk.set(i, sachTk.get(j));
-//                 sachTk.set(j, t);
-//             }
-//         }
-//         int n1=tapC.size();
-//        for(int i=0; i<n-1;i++)
-//         for(int j=i+1; j<n1;j++){
-//             if(tapC.get(i).getNamXB()<tapC.get(j).getNamXB())
-//             {
-//                 TapChi t=tapC.get(i);
-//                 tapC.set(i, tapC.get(j));
-//                 tapC.set(j, t);
-//             }
-//         }
-//     }
-// // sắp xếp tăng dần theo tiêu đề
-//     public void sapXepTangDanTheoTieuDe(){
-//         int n=sachTk.size();
-//        for(int i=0; i<n-1;i++)
-//         for(int j=i+1; j<n;j++){
-//             if((sachTk.get(i).getTieuDe()).compareToIgnoreCase(sachTk.get(j).getTieuDe())>0)
-//             {
-//                 SachThamKhao t=sachTk.get(i);
-//                 sachTk.set(i, sachTk.get(j));
-//                 sachTk.set(j, t);
-//             }
-//         }
-//         int n1=tapC.size();
-//        for(int i=0; i<n-1;i++)
-//         for(int j=i+1; j<n1;j++){
-//             if((tapC.get(i).getTieuDe()).compareToIgnoreCase(tapC.get(j).getTieuDe())>0)
-//             {
-//                 TapChi t=tapC.get(i);
-//                 tapC.set(i, tapC.get(j));
-//                 tapC.set(j, t);
-//             }
-//         }
-//     }
-// // Thống kê số lượng ấn phẩm theo năm
-//     public void ThongKeSoLuongAnPhamTheoNam()
-//     {
-//         sapXepGiamDanTheoNamXb();
-//         System.out.print("\nNam phat hanh va so sach tham khao cua tung nam");
-//         int flag=0,count;
-//         int n=sachTk.size();
-//         for(int i=flag; i<n;i++)
-//         {
-//              count=1;
-//             for(int j=flag+1; j<n;j++){
-//                 if(sachTk.get(i).getNamXB()==sachTk.get(j).getNamXB())
-//                 count++;
-//                 else break;
-//             }
-//             System.out.print("\nNam "+sachTk.get(flag).getNamXB()+" co "+count+" sach tham khao");
-//             flag+=count;
-//         }
-//         System.out.print("\nNam phat hanh va so tap chi cua tung nam");
-       
-//         int n1=tapC.size();
-//         flag=0;
-//         for(int i=flag; i<n;i++)
-//         {
-//              count=1;
-//             for(int j=flag+1; j<n1;j++){
-//                 if(tapC.get(i).getNamXB()==tapC.get(j).getNamXB())
-//                 count++;
-//                 else break;
-//             }
-//             System.out.print("\nNam "+tapC.get(flag).getNamXB()+" co "+count+" tap chi");
-//             flag+=count;
-//         }
+//phuong thuc kiem tra sinh vien co phai sinh vien chinh quy hay khong
+    public static boolean  KiemTra(SinhVien a)
+{
+    String a1= "Sinh vien chinh quy";
 
-//     }
-    // Nhập sách tham khảo
-    public  SinhVienChinhQuy  inputSTK(){
+    if(a.loaiSinhVien().compareTo(a1)==0)
+    {
+        return true;
+    }
+    return false;
+}
+//phuong thuc xac dinh tong so sinh vien chinh quy cua khoa
+public static int TongSVCQ(SinhVien a)
+{
+    int dem=0;
+    for( SinhVienChinhQuy tk:SVCQ )
+    {
+        dem=dem+1;
+    }
+    return(dem);
+}
+//phuong thuc xac dinh diem dau vao cao nhat
+public String MaxDiem(SinhVien a)
+{
+    SinhVien maxSV1=this.getListSinhVienChinhQuy().get(0);
+    for(int i=1;i<this.getListSinhVienChinhQuy().size();i++){
+        if(this.getListSinhVienChinhQuy().get(i).Diem>maxSV1.Diem)
+        maxSV1=getListSinhVienChinhQuy().get(i);
+    }
+    return maxSV1.HoTen;
+    SinhVien maxSV2=this.getListSinhVienTaiChuc().get(0);
+    for(int i=1;i<this.getListSinhVienTaiChuc().size();i++){
+        if(this.getListSinhVienChinhQuy().get(i).Diem>maxSV2.Diem)
+        maxSV2=getListSinhVienChinhQuy().get(i);
+    }
+    return maxSV2.HoTen;
+    
+}
+//phuong thuc tim sinh vien co diem trung binh cao nhat
+public String TBMax(SinhVien a)
+SinhVien max=this.getListSinhVienChinhQuy().get(0);
+    for(int i=1;i<this.getListSinhVienChinhQuy().size();i++){
+        if(this.getListSinhVienChinhQuy().get(i).getDiemTB()>max.getDiemTB())
+        max=this.getListSinhVienChinhQuy().get(i).DiemKC();
+    }
+    return max.HoTen;
+}
+//phuong thuc lay ra noi lien ket cho truoc
+public String NoiLienKetchoTruoc(SinhVien a)
+{
+    String s1;
+    System.out.print("\nNhap noi lien ket can tim kiem : ");
+    Scanner scanner;
+    String string = scanner.nextLine();
+    for(int i=1;i<this.getListSinhVienTaiChuc().size();i++)
+    {
+        if(this.getListSinhVienTaiChuc().get(i).getNoiLienKet().compareTo(s1)==0)
+    }
+
+    return a.HoTen ;
+}
+
+// phuong thuc tang dan theo xep loai 
+public void sapXepTangDanTheoXepLoai(){
+    int n=SVCQ.size();
+   for(int i=0; i<n-1;i++)
+    for(int j=i+1; j<n;j++){
+        if((SVCQ.get(i).getXepLoai()).compareToIgnoreCase(SVCQ.get(j).getXepLoai())>0)
+        {
+            SinhVienChinhQuy t=SVCQ.get(i);
+            SVCQ.set(i, SVCQ.get(j));
+            SVCQ.set(j, t);
+        }
+    }
+    int n1=SVTC.size();
+   for(int i=0; i<n-1;i++)
+    for(int j=i+1; j<n1;j++){
+        if((SVTC.get(i).getXepLoai()).compareToIgnoreCase(SVTC.get(j).getXepLoai())>0)
+        {
+            SinhVienTaiChuc t=SVTC.get(i);
+            SVTC.set(i, SVTC.get(j));
+            SVTC.set(j, t);
+        }
+    }
+}
+// phuong thuc giam dan theo nam vao hoc
+    public void sapXepTangDanTheoNamVaoHoc(){
+        int n=SVCQ.size();
+       for(int i=0; i<n-1;i++)
+        for(int j=i+1; j<n;j++){
+            if((SVCQ.get(i).getNamVaoHoc()).compareToIgnoreCase(SVCQ.get(j).getNamVaoHoc())<0)
+            {
+                SinhVienChinhQuy t=SVCQ.get(i);
+                SVCQ.set(i, SVCQ.get(j));
+                SVCQ.set(j, t);
+            }
+        }
+        int n1=SVTC.size();
+       for(int i=0; i<n-1;i++)
+        for(int j=i+1; j<n1;j++){
+            if((SVTC.get(i).getNamVaoHoc()).compareToIgnoreCase(SVTC.get(j).getNamVaoHoc())<0)
+            {
+                SinhVienTaiChuc t=SVTC.get(i);
+                SVTC.set(i, SVTC.get(j));
+                SVTC.set(j, t);
+            }
+        }
+    }
+//Thong ke so luong an pham theo nam
+    public void ThongKeSoLuongAnPhamTheoNam()
+    {
+        sapXepTangDanTheoNamVaoHoc();
+        System.out.print("\nNam hoc va so sinh vien cua tung nam");
+        int flag=0,count;
+        int n=SVCQ.size();
+        for(int i=flag; i<n;i++)
+        {
+             count=1;
+            for(int j=flag+1; j<n;j++){
+                if(SVCQ.get(i).getNamVaoHoc()==SVCQ.get(j).getNamVaoHoc())
+                count++;
+                else break;
+            }
+            System.out.print("\nNam "+SVCQ.get(flag).getNamVaoHoc()+" co "+count+" sinh vien chinh quy");
+            flag+=count;
+        }
+        System.out.print("\nNam phat hanh va so tap chi cua tung nam");
+       
+        int n1=SVTC.size();
+        flag=0;
+        for(int i=flag; i<n;i++)
+        {
+             count=1;
+            for(int j=flag+1; j<n1;j++){
+                if(SVTC.get(i).getNamVaoHoc()==SVTC.get(j).getNamVaoHoc())
+                count++;
+                else break;
+            }
+            System.out.print("\nNam "+SVTC.get(flag).getNamVaoHoc()+" co "+count+" sinh vien tai chuc");
+            flag+=count;
+        }
+
+    }
+    // Nhập sinh vien chinh quy
+    public  SinhVienChinhQuy  inputSVCQ(){
         Scanner scanner= new Scanner(System.in); {
             String MSV;
             String HoTen;
@@ -191,8 +206,8 @@ public class Khoa {
             return a;
         }
     }
-// Nhập tạp chí
-    public  SinhVienTaiChuc  inputTapChi(){
+// Nhập sinh vien tai chuc
+    public  SinhVienTaiChuc  inputSVTC(){
         Scanner scanner= new Scanner(System.in);{
             String MSV;
             String HoTen;
