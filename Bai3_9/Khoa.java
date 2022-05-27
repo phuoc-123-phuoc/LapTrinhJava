@@ -141,7 +141,7 @@ public void sapXepTangDanTheoXepLoai(){
             }
         }
     }
-//Thong ke so luong an pham theo nam
+//Thong ke so luong sinh vien theo nam vao hoc
     public void ThongKeSoLuongAnPhamTheoNam()
     {
         sapXepTangDanTheoNamVaoHoc();
@@ -159,7 +159,7 @@ public void sapXepTangDanTheoXepLoai(){
             System.out.print("\nNam "+SVCQ.get(flag).getNamVaoHoc()+" co "+count+" sinh vien chinh quy");
             flag+=count;
         }
-        System.out.print("\nNam phat hanh va so tap chi cua tung nam");
+        System.out.print("\nNam vao hoc va so luong sinh vien cua tung nam");
        
         int n1=SVTC.size();
         flag=0;
